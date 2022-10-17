@@ -42,8 +42,8 @@ body {
 .inner {
   position: relative;
   display: block;
-  width: 100%;
-  max-width: 1000px;
+  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -80,17 +80,6 @@ body {
   background-color: #fff;
 }
 
-.gnb {
-  position: fixed;
-  display: block;
-  left: 60%;
-  top: 0;
-  width: 415px;
-  height: 100%;
-
-  z-index: 9999;
-}
-
 .logo {
   position: absolute;
   display: inline-block;
@@ -102,9 +91,20 @@ body {
   background: url("../images/jungle_dark438_72.svg") no-repeat center;
   background-size: cover;
 }
-.mainmenu {
+
+.gnb {
   position: relative;
   display: block;
+  /* width: 415px; */
+  height: 100%;
+  z-index: 9999;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.mainmenu {
+  position: relative;
+  display: inline-block;
   white-space: nowrap;
   text-align: center;
   margin: 0 auto;
@@ -116,9 +116,6 @@ body {
 .mainmenu > li > a {
   position: relative;
   display: block;
-  right: 300px;
-  top: 0;
-  transform: translateX(-50%);
   font-size: 16px;
   color: #000;
   padding: 0 20px;
@@ -128,22 +125,28 @@ body {
 .submenu-wrap {
   position: relative;
   display: block;
-
-  width: 710px;
-  height: 300px;
+  width: 100%;
   margin: 0 auto;
+  background: #fff;
 }
+
 .submenu-wrap::before {
   content: "";
   position: absolute;
   display: block;
-  left: 50px;
   top: 0;
+  left: 50%;
   transform: translateX(-50%);
   width: 100vw;
-  height: 100%;
+  height: 0;
   clear: both;
+  background: #fff;
+  transition: height 0.5s;
 }
+.gnb:hover .submenu-wrap::before {
+  height: 300px;
+}
+
 .sub-menu {
   position: relative;
   display: none;
@@ -255,8 +258,9 @@ body {
   position: relative;
   display: block;
   width: 100%;
-  height: 100%;
+  height: calc(450px + 65px);
   background-color: pink;
+  padding-top: 65px;
 }
 
 .sw-visual {
@@ -362,64 +366,58 @@ body {
   position: relative;
   display: block;
   width: 100%;
-  height: 100%;
   margin: 0 auto;
-  margin-top: 90px;
-  margin-bottom: 70px;
-}
-.course-co {
-  position: absolute;
-  display: block;
-  left: 0;
-  top: 85px;
 }
 
 .course_1 {
   position: absolute;
   display: block;
-  left: 175px;
-  bottom: 24px;
+  left: 270px;
+  bottom: 45px;
 }
 .course_2 {
   position: relative;
   display: block;
 
-  right: 89px;
-  bottom: 27px;
+  left: 270px;
+  bottom: 115px;
 }
 .course_3 {
   position: relative;
   display: block;
+  left: 270px;
+  bottom: 115px;
 }
 
 .menu-list {
   position: relative;
-  display: block;
+  display: flex;
+  justify-content: space-between;
   width: 100%;
-  height: 100%;
+  height: 80px;
+  margin-top: 90px;
+  margin-bottom: 70px;
 }
 
 .menu-list li {
   position: relative;
   display: block;
-  width: 240px;
   height: 100%;
-  float: left;
-  margin-right: 25px;
 }
 
 .menu-list li a {
   position: relative;
   display: block;
-  width: 240px;
+  width: 384px;
   height: 100%;
   text-align: center;
   border-radius: 12px;
-  line-height: 55px;
+  line-height: 80px;
   color: #333;
   font-size: 16px;
   background: #f5f7fb;
   box-shadow: 0px 0px 8px rgb(93 99 113 / 54%);
+  font-weight: 500;
 }
 
 .menu-list li a:hover {
@@ -427,24 +425,77 @@ body {
   color: #fff;
 }
 
-.course-title {
-  position: absolute;
+.couser-title-wrap {
+  position: relative;
   display: block;
-  left: 0px;
+}
+.course-co {
+  position: relative;
+  display: block;
+  color: #ff6000;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 12px;
+}
 
-  top: 100px;
-
+.course-title {
+  position: relative;
+  display: block;
   color: #333;
   font-size: 32px;
   font-weight: 900;
-  text-align: left;
+  float: left;
+  padding-right: 25px;
 }
+
 .course-ex {
-  position: absolute;
+  position: relative;
   display: block;
-  left: 200px;
-  top: 100px;
+  color: #333;
+  font-size: 16px;
+  float: left;
+  padding-bottom: 45px;
 }
+
+/* course-tab */
+.course-tab {
+  position: relative;
+  display: block;
+}
+.course-tab li {
+  position: relative;
+  display: block;
+  float: left;
+  padding: 0 15px;
+  padding-bottom: 15px;
+  margin-left: 15px;
+}
+
+.course-tab li a {
+  position: relative;
+  display: block;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.course-tab .on {
+  border-bottom: 3px solid #ff8800;
+}
+.course-tab .on a {
+  color: #ff8800;
+}
+
+.course-content {
+  position: relative;
+  display: block;
+  height: 2240px;
+  font-size: 16px;
+  color: #333;
+  padding-top: 35px;
+}
+
 .course-txt {
   position: relative;
   display: block;
@@ -495,12 +546,6 @@ body {
   font-weight: 500;
 }
 
-.tab .on a {
-  background-color: #ff8800;
-  border-radius: 19px;
-  color: #fff;
-}
-
 .tab .diploma {
   margin-left: 15px;
   color: #333;
@@ -509,19 +554,6 @@ body {
 .tab .workshop {
   margin-left: 15px;
   color: #333;
-}
-
-.course .course-content {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 100%;
-  text-align: center;
-  font-size: 16px;
-  color: #333;
- 
-      padding-top: 220px;
 }
 
 .course .on {
@@ -535,7 +567,9 @@ body {
 
 .course .course-content li {
   height: 228px;
-  margin-bottom: 140px;
+  float: left;
+  width: calc(25% - 20px);
+  margin-bottom: 160px;
 }
 
 .course .course-content li a {
@@ -590,102 +624,46 @@ body {
   font-weight: 500;
 }
 
-/* 인터뷰 */
+/* 컨설팅 */
 
-.interview {
+.consulting {
   position: relative;
   display: block;
-  width: 100%;
-  margin: 75px 0 160px;
-  background-color: #f5f8fe;
+  padding-bottom: 135px;
 }
-
-.inter-title {
-  width: 1000px;
-  color: #333;
-  font-size: 32px;
-  text-align: center;
-  font-weight: 900;
-  padding-bottom: 40px;
-  padding-top: 80px;
-  text-transform: uppercase;
-}
-
-.inter-slide {
+.consulting .inner {
   position: relative;
   display: block;
-  height: 290px;
+  height: 200px;
+  padding: 50px 100px;
+  box-sizing: border-box;
+  background-color: #7494ff;
 }
 
-.slide {
-  position: absolute;
-  display: flex;
-  justify-content: space-around;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 290px;
-  margin: 0;
-}
-
-.slide li {
+.consulting h2 {
   position: relative;
   display: block;
-  height: 100%;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  padding-bottom: 20px;
 }
-
-.slide li > a {
+.consul-bt {
+  display: inline-block;
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+.consul-bt > a {
+  color: #7494ff;
+  font-weight: 500;
+}
+.consul_img {
   position: relative;
   display: block;
-  height: 260px;
+  left: 75%;
+  bottom: 200px;
 }
-
-.slide .img-1 {
-  position: relative;
-  display: block;
-  border-radius: 12px;
-  width: 100%;
-  height: 100%;
-}
-
-.slide .img-2 {
-  position: relative;
-  display: block;
-  border-radius: 12px;
-  width: 100%;
-  height: 100%;
-}
-
-.slide .img-3 {
-  position: relative;
-  display: block;
-  border-radius: 12px;
-  width: 100%;
-  height: 100%;
-}
-
-.slide li :last-child {
-  margin-right: 0;
-}
-
-.slide-bt {
-  position: absolute;
-  display: block;
-  left: 10px;
-  bottom: 30px;
-  width: 53px;
-  height: 53px;
-}
-
-.slide p {
-  width: 260px;
-  height: 21px;
-  font-size: 15px;
-  color: #333;
-  margin: 8px 0px 0px;
-  font-weight: 300;
-}
-
 /* 포트폴리오 */
 
 .portfolio {
@@ -700,14 +678,32 @@ body {
 .portfolio .inner {
 }
 
+.port-po {
+  position: relative;
+  display: block;
+  text-transform: capitalize;
+  color: #ff6600;
+  font-weight: 800;
+  padding-bottom: 20px;
+}
 .port-title {
-  text-align: center;
-  font-weight: 900;
+  text-align: left;
+  font-weight: 700;
+  padding-right: 20px;
+  float: left;
   font-size: 32px;
+  color: #333;
   text-transform: uppercase;
-  padding-bottom: 80px;
 }
 
+.port-ex {
+  display: inline-block;
+
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+  padding-bottom: 50px;
+}
 .port-menu {
   position: relative;
   display: block;
@@ -720,24 +716,49 @@ body {
   text-align: center;
 }
 
+.port-tab .port-tab-on > a {
+  color: #ff8800;
+}
 .port-tab li {
   position: relative;
   display: inline-block;
+  float: left;
 }
 
-.port-tab li a {
+/* .port-tab > li > a:nth-child(1) {
+  color: #ff8800;
+} */
+.port-tab > li > a {
   font-weight: 600;
   font-size: 16px;
   color: #333;
   padding: 4px 14px 3px;
-  border-radius: 19px;
+
   text-transform: uppercase;
   transition: all 0.4s;
 }
+.port-tab-on > a {
+  border-bottom: 3px solid #ff8000;
+}
 
-.port-tab li a .port-tab-on {
-  background: #ff8102;
-  color: #fff;
+.contents-wrap {
+  position: relative;
+  height: 420px;
+  box-sizing: border-box;
+}
+
+.contents-wrap > ul {
+  height: 100%;
+}
+
+.contents-wrap > ul > li {
+  float: left;
+  position: relative;
+  width: calc(25% - 12px);
+
+  height: calc(50% - 8px);
+
+  box-sizing: border-box;
 }
 
 .pt-toy {
@@ -745,9 +766,9 @@ body {
   display: block;
   left: 0;
   top: 0;
-  width: 239px;
+
   height: 195px;
-  background: url("../images/2020_app13\ \(1\).jpg") no-repeat left top;
+  background: url("../images/2020_app13\ \(1\).jpg") no-repeat;
   background-size: cover;
   margin-bottom: 10px;
   border-radius: 12px;
@@ -756,24 +777,13 @@ body {
 .pt-kid {
   position: relative;
   display: block;
-  width: 239px;
+
   height: 195px;
-  background: url("../images/2020_app12.jpg") no-repeat left bottom;
+  background: url("../images/2020_app12.jpg") no-repeat;
   background-size: cover;
   margin-bottom: 10 0px;
   border-radius: 12px;
 }
-
-.contents-wrap {
-  position: relative;
-  box-sizing: border-box;
-}
-
-.contents-wrap > ul > li {
-  float: left;
-  width: 25%;
-}
-
 .port-net {
   position: relative;
   display: block;
@@ -782,35 +792,40 @@ body {
 .pt-center {
   position: relative;
   display: block;
-  width: 483px;
-  height: 404px;
-  background: url("../images/2020_app11.jpg") no-repeat center;
+
+  height: 195px;
+  background: url("../images/2020_app11.jpg") no-repeat;
   background-size: cover;
   border-radius: 12px;
 }
 
-.port-right {
+/* .port-right {
   width: auto;
   margin-left: 24.5%;
-}
+} */
 
 .pt-pam {
   position: relative;
   display: block;
   width: 239px;
   height: 195px;
-  background: url("../images/2020_app10.jpg") no-repeat right top;
+  background: url("../images/2020_app10.jpg") no-repeat;
   background-size: cover;
   margin-bottom: 10px;
   border-radius: 12px;
 }
-
+.pt-pl {
+  position: relative;
+  display: block;
+  background: url("../images/2020_app9.jpg") no-repeat;
+  background-size: cover;
+}
 .pt-pc {
   position: relative;
   display: block;
   width: 239px;
   height: 195px;
-  background: url("../images/2020_app7.jpg") no-repeat right bottom;
+  background: url("../images/2020_app7.jpg") no-repeat;
   background-size: cover;
   margin-bottom: 10px;
   border-radius: 12px;
