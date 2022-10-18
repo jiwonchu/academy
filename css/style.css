@@ -356,7 +356,7 @@ body {
 
 .course {
   display: block;
-  padding-bottom: 85px;
+  padding-bottom: 0px;
 }
 
 .course .inner {
@@ -568,7 +568,7 @@ body {
 .course .course-content li {
   height: 228px;
   float: left;
-  width: calc(25% - 20px);
+  width: calc(25% - 10px);
   margin-bottom: 160px;
 }
 
@@ -707,7 +707,7 @@ body {
 .port-menu {
   position: relative;
   display: block;
-  padding-bottom: 30px;
+  padding-bottom: 60px;
 }
 
 .port-tab {
@@ -757,7 +757,7 @@ body {
   width: calc(25% - 12px);
 
   height: calc(50% - 8px);
-
+  margin-right: 10px;
   box-sizing: border-box;
 }
 
@@ -807,9 +807,19 @@ body {
 .pt-pam {
   position: relative;
   display: block;
-  width: 239px;
+
   height: 195px;
   background: url("../images/2020_app10.jpg") no-repeat;
+  background-size: cover;
+  margin-bottom: 10px;
+  border-radius: 12px;
+}
+.pt-pc {
+  position: relative;
+  display: block;
+
+  height: 195px;
+  background: url("../images/2020_app7.jpg") no-repeat;
   background-size: cover;
   margin-bottom: 10px;
   border-radius: 12px;
@@ -817,172 +827,244 @@ body {
 .pt-pl {
   position: relative;
   display: block;
+
+  height: 195px;
   background: url("../images/2020_app9.jpg") no-repeat;
   background-size: cover;
+  margin-bottom: 10px;
+  border-radius: 12px;
 }
-.pt-pc {
+.pt-dt {
   position: relative;
   display: block;
-  width: 239px;
+
   height: 195px;
-  background: url("../images/2020_app7.jpg") no-repeat;
+  background: url("../images/2020_app8.jpg") no-repeat;
+  background-size: cover;
+  margin-bottom: 10px;
+  border-radius: 12px;
+}
+.pt-sp {
+  position: relative;
+  display: block;
+
+  height: 195px;
+  background: url("../images/2020_app5.jpg") no-repeat;
   background-size: cover;
   margin-bottom: 10px;
   border-radius: 12px;
 }
 
-/* 매거진 */
+/* 잡 */
 
-.magazine {
+.job {
   position: relative;
   display: block;
   width: 100%;
-  padding: 75px 0 95px;
-  background: #fff3e6;
-  margin: 0 auto;
+  height: 670px;
 }
 
-.magazine .container {
+.job .inner {
 }
 
-.magazine-title {
+.job-ju {
   position: relative;
-  width: 100%;
-  text-align: center;
-  font-size: 32px;
+  display: block;
+  font-size: 16px;
+  color: #ff6600;
   font-weight: 900;
-  color: #333;
   text-transform: uppercase;
-  margin-bottom: 30px;
+  padding-bottom: 10px;
 }
 
-.magazine-tab {
-  width: 320px;
-  font-size: 16px;
-  margin: 0 auto;
-  padding-top: 10px;
-  padding-bottom: 45px;
-}
-
-.magazine-tab li {
-  float: left;
-  width: auto !important;
-}
-
-.tab-1 a {
-  background: #ff8102;
-  font: 500 16px;
-  padding: 3px 12px;
-  overflow: hidden;
-  color: #fff;
-  border-radius: 19px;
-}
-
-.tab-2 a {
-  font: 500 16px;
-  padding: 3px 12px;
-  overflow: hidden;
-  color: #333;
-  margin-right: 0px 15px;
-}
-
-.tab-3 {
-  font: 500 16px;
-  padding: 3px 12px;
-  overflow: hidden;
-  color: #333;
-  margin-right: 0px 15px;
-}
-
-.magazine .content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 995px;
-  /* max-height: 672px; */
-  padding-right: 5px;
-  overflow: hidden;
-  margin: 0 auto;
-}
-
-.magazine .content li {
+.job h2 {
   position: relative;
-  width: 320px;
-  display: block;
-  border-radius: 12px;
+  display: inline-block;
+  font-size: 32px;
+  color: #333;
+  font-weight: 700;
   text-align: left;
-  margin-bottom: 45px;
+  padding-right: 10px;
 }
 
-.img-area {
+.job-ex {
   position: relative;
-  display: block;
-  width: 320px;
-  height: 216px;
+  display: inline-block;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  padding-bottom: 50px;
 }
 
-.img-area img {
-  position: relative;
-  display: block;
+.job > ul {
+  overflow: hidden;
   width: 100%;
-  height: 216px;
+  height: 395px;
+}
+.job-list {
+  float: left;
+  width: calc(50% - 7.5px);
+  height: 190px;
+  background-color: #eff4ff;
+  border-radius: 12px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.job-list-2 {
+  float: left;
+  width: calc(50% - 7.5px);
+  height: 190px;
+  background-color: #eff4ff;
   border-radius: 12px;
 }
+.job-list-3 {
+  float: left;
+  width: calc(50% - 7.5px);
+  height: 190px;
+  background-color: #eff4ff;
+  border-radius: 12px;
+  margin-right: 10px;
+}
+.job-list-4 {
+  float: left;
+  width: calc(50% - 7.5px);
+  height: 190px;
+  background-color: #eff4ff;
+  border-radius: 12px;
+}
+.job > ul > li:nth-child(2n - 1) {
+  margin-left: 0;
+}
 
-.magazine .content li a {
-  display: block;
-  width: 280px;
-  height: 146px;
+.job-a {
   position: relative;
-  margin-top: -70px;
-  right: -40px;
+  display: block;
+  height: 100%;
   box-sizing: border-box;
-  padding: 18px 20px 0 20px;
-  background-color: #fff;
-  color: #333;
   border-radius: 12px;
-  box-shadow: 2px 2px 5px 0 rgb(15 41 107/20%);
-}
-
-.magazine .content li a em {
-  width: 240px;
-  height: 20px;
-  color: #333;
-  font-size: 14px;
-  margin: 0px 0px 2px;
-}
-
-.magazine .content li a strong {
-  display: block;
-  width: 240px;
-  height: 48px;
-  color: #333;
+  padding: 20px 50px;
   font-size: 16px;
-  margin: 0px 0px 16px;
+  color: #333;
+  font-weight: 500;
+}
+.job-b {
+  position: relative;
+  display: block;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 20px 50px;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+.job-c {
+  position: relative;
+  display: block;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 20px 50px;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+.job-d {
+  position: relative;
+  display: block;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 20px 50px;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+.job > ul > li > a > img {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+}
+.job_1 {
+  position: relative;
+  display: block;
+  bottom: 85px;
+  left: 170px;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+.job_2 {
+  position: relative;
+  display: block;
+  bottom: 85px;
+  left: 170px;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+.job_3 {
+  position: relative;
+  display: block;
+  bottom: 85px;
+  left: 170px;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+.job_4 {
+  position: relative;
+  display: block;
+  bottom: 85px;
+  left: 170px;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
 }
 
-.magazine .content li a span {
-  width: 89.92px;
-  height: 26px;
-  font-size: 14px;
+/* 블로그 */
+
+.blog {
+  margin-bottom: 140px;
+}
+
+.blog .inner {
+  position: relative;
+  display: block;
+  height: 200px;
+  padding: 50px 100px;
+  box-sizing: border-box;
+  background-color: #ef9341;
+}
+
+.blog h2 {
+  position: relative;
+  display: block;
+  font-size: 20px;
   color: #fff;
-  background-color: #ff8800;
-  padding: 3px 12px;
-  border-radius: 19px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 30px;
 }
 
-.mg-more {
+.blog_1 {
+  display: inline-block;
+  background-color: #fff;
+  padding: 6px 10px;
+  border-radius: 15px;
+}
+.blog-se {
+  color: #ef9341;
+  font-weight: 500;
+}
+.blog-img {
+  position: relative;
   display: block;
-  width: 1000px;
-  height: 19px;
-  font-size: 16px;
-  padding-top: 40px;
-  margin: 0 auto;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 600;
+  bottom: 210px;
+  left: 80%;
 }
-
 /* 하단 */
 
 .footer {
