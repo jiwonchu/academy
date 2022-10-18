@@ -41,11 +41,16 @@
 
 <body>
 
+    <!-- 오른쪽 고정 SNS -->
+    <div class="fix-sns"></div>
+
     <div class="wrap">
         <!-- 상단 -->
         <header class="header">
-            <div class="inner">
+            <!-- 서브메뉴 배경 -->
+            <div class="submenu-wrap-bg"></div>
 
+            <div class="inner">
                 <a href="#" class="logo"></a>
 
                 <div class="gnb clearfix">
@@ -63,7 +68,57 @@
                             <a href="#">커뮤니티</a>
                         </li>
                     </ul>
+                    <!-- 서브메뉴 모음 -->
                     <div class="submenu-wrap">
+                        <div class="sub-menu-box">
+                            <div class="sub-menu-title">
+                                <h2>포트폴리오</h2>
+                                <p>아카데미정글 수강생들의 땀과 열정이 배인 포트폴리오를 만나보실 수 있습니다.</p>
+                            </div>
+                            <ul class="sub-menu clearfix">
+                                <li><a href="#"><span>ALL</span></a></li>
+                                <li><a href="#"><span>APP</span></a></li>
+                                <li><a href="#"><span>WEB</span></a></li>
+                                <li><a href="#"><span>UX</span></a></li>
+                                <li><a href="#"><span>WEB PUBLISH</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="sub-menu-box">
+                            <div class="sub-menu-title">
+                                <h2>잡정글</h2>
+                                <p>아카데미정글은 취업에 꼭 필요한 다양한 정보를 제공하고 있습니다.</p>
+                            </div>
+                            <ul class="sub-menu clearfix">
+                                <li><a href="#"><span>취업 기업리스트</span></a></li>
+                                <li><a href="#"><span>졸업생 취업 현황</span></a></li>
+                                <li><a href="#"><span>채용 정보</span></a></li>
+                                <li><a href="#"><span>취업 가이드</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="sub-menu-box">
+                            <div class="sub-menu-title">
+                                <h2>인포메이션</h2>
+                                <p>아카데미정글에 대해 궁금하신 분들은 참고해주세요.</p>
+                            </div>
+                            <ul class="sub-menu clearfix">
+                                <li><a href="#"><span>커리큘럼 로드맵</span></a></li>
+                                <li><a href="#"><span>공지사항</span></a></li>
+                                <li><a href="#"><span>자주 묻는 질문</span></a></li>
+                                <li><a href="#"><span>오시는길</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="sub-menu-box">
+                            <div class="sub-menu-title">
+                                <h2>인포메이션</h2>
+                                <p>아카데미정글의 다양한 소식과 이야기를 소개합니다.</p>
+                            </div>
+                            <ul class="sub-menu clearfix">
+                                <li><a href="#"><span>핀터레스트</span></a></li>
+                                <li><a href="#"><span>블로그</span></a></li>
+                                <li><a href="#"><span>수강후기</span></a></li>
+                                <li><a href="#"><span>강사인터뷰</span></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
@@ -79,17 +134,29 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide visual-bg-1">
                         <div class="inner">
-                            <a href="#" class="visual-1"></a>
+                            <a href="#" class="visual-1">
+                                <div class="sw-visual-box">
+                                    <h2>제목 작성</h2>
+                                </div>
+                            </a>
                         </div>
                     </div>
                     <div class="swiper-slide visual-bg-2">
                         <div class="inner">
-                            <a href="#" class="visual-2"></a>
+                            <a href="#" class="visual-2">                                
+                                <div class="sw-visual-box">
+                                    <h2>제목 작성</h2>
+                                </div>
+                            </a>
                         </div>
                     </div>
                     <div class="swiper-slide visual-bg-3">
                         <div class="inner">
-                            <a href="#" class="visual-3"></a>
+                            <a href="#" class="visual-3">                                
+                                <div class="sw-visual-box">
+                                    <h2>제목 작성</h2>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -97,7 +164,8 @@
                     <div class="sw-visual-pagination">
                     </div>
                 </div>
-
+                <button class="sw-visual-prev">이전</button>
+                <button class="sw-visual-next">다음</button>
             </div>
         </section>
 
@@ -129,7 +197,7 @@
                     <p class="course-ex">아카데미정글의 차별화된 강의를 만나보세요!<br>
                         실무 중심 강의를 통해 새로운 크리에이티브 세계를 경험해보세요.</p>
                 </div>
-                
+
                 <ul class="course-tab clearfix">
                     <li class="on">
                         <a href="#">전체보기</a>
@@ -497,9 +565,9 @@
     <section class="consulting">
         <div class="inner">
             <h2>어떤 과정을 수강해야할지 고민이라면?<br>
-            1:1 상담 신청을 해보세요!</h2>
-           <span class="consul-bt"><a href="#">상담신청</a></span>
-           <img src="images/consulting.png" alt="" class="consul_img">
+                1:1 상담 신청을 해보세요!</h2>
+            <span class="consul-bt"><a href="#">상담신청</a></span>
+            <img src="images/consulting.png" alt="" class="consul_img">
         </div>
     </section>
 
@@ -509,7 +577,7 @@
             <em class="port-po">portfolio</em>
             <h2 class="port-title">정글 포트폴리오</h2>
             <p class="port-ex">아카데미정글 수강생들의 노력의 결실,<br>
-            남들과는 다르고 특별한 수강생들의 포트폴리오를 소개합니다.</p>
+                남들과는 다르고 특별한 수강생들의 포트폴리오를 소개합니다.</p>
             <nav class="port-menu clearfix">
                 <ul class="port-tab">
                     <li class="port-tab-on">
@@ -533,26 +601,26 @@
             <div class="contents-wrap clearfix">
                 <ul class="port-contents">
                     <li>
-                        <a class="pt-toy" href=""></a>    </li>
-                        <li> <a class="pt-kid" href=""></a></li>
-                        <li><a class="pt-center" href=""></a></li>
-                       <li> <a class="pt-pam" href=""></a></li>
-                
-                  
+                        <a class="pt-toy" href=""></a> </li>
+                    <li> <a class="pt-kid" href=""></a></li>
+                    <li><a class="pt-center" href=""></a></li>
+                    <li> <a class="pt-pam" href=""></a></li>
 
-                        
+
+
+
                     </li>
                     <li>
-                        <a class="pt-pl" href=""></a>    </li>
-                        <li> <a class="pt-dt" href=""></a></li>
-                        <li><a class="pt-pc" href=""></a></li>
-                       <li> <a class="pt-sp" href=""></a></li>
-                
-                  
+                        <a class="pt-pl" href=""></a> </li>
+                    <li> <a class="pt-dt" href=""></a></li>
+                    <li><a class="pt-pc" href=""></a></li>
+                    <li> <a class="pt-sp" href=""></a></li>
 
-                        
+
+
+
                     </li>
-                  
+
                 </ul>
 
 
@@ -572,41 +640,41 @@
     <!-- 매거진 -->
     <section class="job">
         <div class="inner">
-            
-<em class="job-ju">job jungle</em>
-<h2>잡 정글</h2>
-<p class="job-ex">취업에 꼭 필요한 다양한 정보,<br>
-아카데미정글 잡 정글에서 확인해보세요.</p>
-          <ul>
-            <li class="job-list">
-                <a href="#" class="job-a"><img src="images/job01.png" alt="">취업기업리스트</a>
-                <span class="job_1">아카데미정글 졸업생들의 주요 기업 취업 리스트</span>
-                
-            </li>
-            <li class="job-list-2">
-                <a href="#" class="job-b"><img src="images/job02.png" alt="">졸업생 취업현황</a>
-                <span class="job_2">아카데미정글 졸업생들의 취업 현황</span>
-            </li>
-         <li class="job-list-3">
-                <a href="#" class="job-c"><img src="images/job03.png" alt="">채용 정보<br></a>
-               <span class="job_3"> 다양한 기업에서 진행중인 채용 정보 소개</span>
-            </li>
-            <li class="job-list-4">
-                <a href="#" class="job-d"><img src="images/job04.png" alt="">취업 가이드<br></a>
-               <span class="job_4"> 취업에 도움이 되는 자기소개서 작성법, 면접 대비</span>
-            </li>
-          </ul>
+
+            <em class="job-ju">job jungle</em>
+            <h2>잡 정글</h2>
+            <p class="job-ex">취업에 꼭 필요한 다양한 정보,<br>
+                아카데미정글 잡 정글에서 확인해보세요.</p>
+            <ul>
+                <li class="job-list">
+                    <a href="#" class="job-a"><img src="images/job01.png" alt="">취업기업리스트</a>
+                    <span class="job_1">아카데미정글 졸업생들의 주요 기업 취업 리스트</span>
+
+                </li>
+                <li class="job-list-2">
+                    <a href="#" class="job-b"><img src="images/job02.png" alt="">졸업생 취업현황</a>
+                    <span class="job_2">아카데미정글 졸업생들의 취업 현황</span>
+                </li>
+                <li class="job-list-3">
+                    <a href="#" class="job-c"><img src="images/job03.png" alt="">채용 정보<br></a>
+                    <span class="job_3"> 다양한 기업에서 진행중인 채용 정보 소개</span>
+                </li>
+                <li class="job-list-4">
+                    <a href="#" class="job-d"><img src="images/job04.png" alt="">취업 가이드<br></a>
+                    <span class="job_4"> 취업에 도움이 되는 자기소개서 작성법, 면접 대비</span>
+                </li>
+            </ul>
         </div>
     </section>
-<!-- 블로그 -->
-<section class="blog">
-    <div class="inner">
-        <h2>아카데미정글의 새로운 소식이 궁금하다면?<br>
-        아카데미정글 블로그에서 확인해보세요!</h2>
-        <span class="blog_1"><a href="" class="blog-se">보러가기</a></span>
-        <img src="images/blog.png" alt="" class="blog-img">
-    </div>
-</section>
+    <!-- 블로그 -->
+    <section class="blog">
+        <div class="inner">
+            <h2>아카데미정글의 새로운 소식이 궁금하다면?<br>
+                아카데미정글 블로그에서 확인해보세요!</h2>
+            <span class="blog_1"><a href="" class="blog-se">보러가기</a></span>
+            <img src="images/blog.png" alt="" class="blog-img">
+        </div>
+    </section>
     <!-- 하단 -->
     <section class="footer">
         <div class="inner">

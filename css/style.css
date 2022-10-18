@@ -31,7 +31,7 @@ body {
 
 /* 공통구역 */
 
-.clearfix {
+.clearfix::after {
   content: "";
   position: relative;
   display: block;
@@ -45,6 +45,14 @@ body {
   width: 1200px;
   max-width: 1200px;
   margin: 0 auto;
+}
+/* 오른쪽 고정 */
+.fix-sns {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  display: block;
+  z-index: 99999;
 }
 
 /* 상단 */
@@ -122,51 +130,87 @@ body {
   line-height: 60px;
 }
 
+/* 서브메뉴 배경 */
+.submenu-wrap-bg {
+  position: absolute;
+  display: block;
+  top: 64px;
+  left: 0;
+  /* transform: translateX(-50%); */
+  width: 100%;
+  height: 0px;
+  background: #fff;
+  transition: height 0.5s;
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+}
+.submenu-wrap-bg-active {
+  height: 300px;
+}
+
+/* 서브메뉴 내용 모음 */
 .submenu-wrap {
   position: relative;
   display: block;
   width: 100%;
-  margin: 0 auto;
-  background: #fff;
-}
-
-.submenu-wrap::before {
-  content: "";
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
   height: 0;
-  clear: both;
-  background: #fff;
+  margin: 0 auto;
+  overflow: hidden;
   transition: height 0.5s;
 }
-.gnb:hover .submenu-wrap::before {
+.submenu-wrap-active {
   height: 300px;
+}
+/* 각가의 서브메뉴 내용들을 absolute 로 모음 */
+.sub-menu-box {
+  position: absolute;
+  left: 0;
+  top: 25px;
+  display: block;
+  width: 1200px;
+  text-align: left;
+  overflow: hidden;
+}
+
+.sub-menu-title {
+  position: relative;
+  display: block;
+  float: left;
+  width: 235px;
+  margin-right: 65px;
+  color: #333;
+}
+.sub-menu-title h2 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 13px;
+}
+.sub-menu-title p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.4;
 }
 
 .sub-menu {
   position: relative;
-  display: none;
-
-  white-space: nowrap;
-  padding: 15px 0;
+  display: block;
+  float: left;
 }
 
 .sub-menu > li {
   position: relative;
   display: block;
-  padding-right: 50px;
+  margin-bottom: 20px;
 }
+
 .sub-menu > li > a {
   display: block;
   color: #000;
-  margin-bottom: 25px;
-  margin-top: 30px;
-  transform: translateX(-50%);
+  font-size: 15px;
+  font-weight: 300;
+  color: #333;
 }
+
 .sub-menu2 {
   position: relative;
   display: inline-block;
@@ -350,6 +394,26 @@ body {
   height: 450px;
   background: url("../images/job_bg.png") no-repeat center;
   background-size: cover;
+}
+
+.sw-visual-box {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.sw-visual-prev {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 99;
+}
+.sw-visual-next {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  z-index: 99;
 }
 
 /* 코스 */
