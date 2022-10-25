@@ -1,0 +1,1685 @@
+@charset 'utf-8';
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+img {
+  vertical-align: middle;
+  border: 0;
+}
+
+html {
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 공통구역 */
+
+.clearfix::after {
+  content: "";
+  position: relative;
+  display: block;
+  width: 100%;
+  clear: both;
+}
+
+.inner {
+  position: relative;
+  display: block;
+  width: 1200px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 안내창 */
+
+.modal-wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 99999;
+}
+.modal-main {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 550px;
+  height: 400px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0px 0px 15px 0px rgb(0 0 0 / 70%);
+  border: 5px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal-main h1 {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  color: #000;
+  /* padding: 20px 0; */
+  padding-top: 20px;
+  padding-bottom: 95px;
+}
+.modal-main p {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 300;
+  color: #111;
+  line-height: 1.8;
+}
+
+.modal-main b {
+  font-weight: 600;
+  text-decoration: underline;
+  color: #ff8800;
+}
+.modal-main strong {
+  font-weight: 600;
+  text-decoration: underline;
+  color: #ff8800;
+}
+.modal-close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border: 0;
+  font-size: 24px;
+  cursor: pointer;
+  background: transparent;
+  color: #999;
+  transition: transform 0.3s;
+}
+
+.modal-close:hover {
+  transform: rotate(90deg);
+}
+
+/* 오른쪽 고정 */
+
+.fix-sns {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  display: block;
+  z-index: 99999;
+}
+
+/* 상단 */
+
+.header {
+  position: fixed;
+  margin: 0 auto;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  background-color: #fff;
+  margin: 0 auto;
+  z-index: 99999;
+  box-shadow: 0 3px 6px rgb(0 0 0 /16%);
+  border-bottom: 1px solid #efefef;
+}
+
+.header .active::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 320px;
+  background-color: #fff;
+}
+
+.header .inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 64px;
+  background-color: #fff;
+}
+
+.logo {
+  position: absolute;
+  display: inline-block;
+  transform: translateY(-50%);
+  left: 0;
+  top: 50%;
+  width: 149px;
+  height: 24px;
+  background: url("../images/jungle_dark438_72.svg") no-repeat center;
+  background-size: cover;
+}
+
+.gnb {
+  position: relative;
+  display: block;
+  /* width: 415px; */
+  height: 100%;
+  z-index: 9999;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.mainmenu {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.mainmenu > li {
+  position: relative;
+  display: inline-block;
+}
+
+.mainmenu > li > a {
+  position: relative;
+  display: block;
+  font-size: 16px;
+  color: #000;
+  padding: 0 20px;
+  line-height: 60px;
+}
+
+/* 서브메뉴 배경 */
+
+.submenu-wrap-bg {
+  position: absolute;
+  display: block;
+  top: 64px;
+  left: 0;
+  /* transform: translateX(-50%); */
+  width: 100%;
+  height: 0px;
+  background: #fff;
+  transition: height 0.5s;
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+}
+
+.submenu-wrap-bg-active {
+  height: 300px;
+}
+
+/* 서브메뉴 내용 모음 */
+
+.submenu-wrap {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  transition: height 0.5s;
+}
+
+.submenu-wrap-active {
+  height: 300px;
+}
+
+/* 각가의 서브메뉴 내용들을 absolute 로 모음 */
+
+.sub-menu-box {
+  position: absolute;
+  left: 0;
+  top: 25px;
+  display: block;
+  width: 1200px;
+  text-align: left;
+  overflow: hidden;
+}
+
+.sub-menu-title {
+  position: relative;
+  display: block;
+  float: left;
+  width: 235px;
+  margin-right: 65px;
+  color: #333;
+}
+
+.sub-menu-title h2 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 13px;
+}
+
+.sub-menu-title p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.sub-menu {
+  position: relative;
+  display: block;
+  float: left;
+}
+
+.sub-menu > li {
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.sub-menu > li > a {
+  display: block;
+  color: #000;
+  font-size: 15px;
+  font-weight: 300;
+  color: #333;
+}
+
+.sub-menu2 {
+  position: relative;
+  display: inline-block;
+  padding: 30px 0;
+}
+
+.sub-menu2 > li {
+  position: relative;
+  display: block;
+  padding-right: 50px;
+}
+
+.sub-menu2 > li > a {
+  display: block;
+  color: #000;
+  margin-bottom: 25px;
+  margin-top: 30px;
+  transform: translateX(-50%);
+}
+
+.sub-menu3 {
+  position: relative;
+  display: inline-block;
+  padding: 30px 0;
+}
+
+.sub-menu3 > li {
+  position: relative;
+  display: block;
+  padding-right: 50px;
+}
+
+.sub-menu3 > li > a {
+  display: block;
+  color: #000;
+  margin-bottom: 25px;
+  margin-top: 30px;
+  transform: translateX(-50%);
+}
+
+.sub-menu4 {
+  position: relative;
+  display: inline-block;
+  padding: 30px 0;
+}
+
+.sub-menu4 > li {
+  position: relative;
+  display: block;
+  padding-right: 50px;
+}
+
+.sub-menu4 > li > a {
+  display: block;
+  color: #000;
+  margin-bottom: 25px;
+  margin-top: 30px;
+  transform: translateX(-50%);
+}
+
+.member-list {
+  position: absolute;
+  display: block;
+  width: 122px;
+  height: 64px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.member-list li {
+  position: relative;
+  display: block;
+  float: left;
+  white-space: nowrap;
+  margin-right: 10px;
+}
+
+.member-list li a {
+  position: relative;
+  display: block;
+  font-size: 12px;
+  color: #333;
+  line-height: 64px;
+}
+
+/* 비주얼 */
+
+.visual {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 450px;
+}
+
+.sw-visual {
+}
+
+.sw-visual-control {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20px;
+  display: block;
+  width: 100%;
+  z-index: 9;
+  text-align: center;
+}
+
+.sw-visual-pagination .swiper-pagination-bullet {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  border: 1px solid #fff;
+  background-color: rgba(255, 255, 255, 0);
+  opacity: 1;
+  margin: 0 10px;
+  transition: width 0.5s;
+  overflow: hidden;
+}
+
+.sw-visual-pagination .swiper-pagination-bullet::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 8px;
+  background-color: #fff;
+  opacity: 0.5;
+  transition: width 2.5s;
+}
+
+.sw-visual-pagination .swiper-pagination-bullet-active {
+  width: 42px;
+}
+
+.sw-visual-pagination .swiper-pagination-bullet-active::before {
+  width: 100%;
+}
+
+.visual .inner {
+  position: relative;
+  display: block;
+}
+
+.visual-bg-1 {
+  background: #083c40;
+}
+
+.visual-bg-2 {
+  background: #e8e6e7;
+}
+
+.visual-bg-3 {
+  background: #fec23e;
+}
+
+.visual-1 {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 450px;
+  background: url("../images/udja_bg.png") no-repeat center;
+  background-size: cover;
+}
+
+.visual-2 {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 450px;
+  background: url("../images/mxdn_bg.png") no-repeat center;
+  background-size: cover;
+}
+
+.visual-3 {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 450px;
+  background: url("../images/job_bg.png") no-repeat center;
+  background-size: cover;
+}
+
+.sw-visual-box {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.visual-txt-1 {
+  position: absolute;
+  display: block;
+  color: #fff;
+  font-size: 32px;
+  left: 100px;
+  top: 100px;
+  font-weight: 600;
+}
+
+.visual-txt-2 {
+  position: absolute;
+  display: block;
+  color: #292a2b;
+  font-size: 32px;
+  left: 100px;
+  top: 100px;
+  font-weight: 600;
+}
+
+.visual-txt-3 {
+  position: absolute;
+  display: block;
+  color: #362919;
+  font-size: 32px;
+  left: 100px;
+  top: 100px;
+  font-weight: 600;
+}
+
+.visual-ex-1 {
+  position: relative;
+  display: block;
+  color: #fff;
+  font-size: 18px;
+  left: 100px;
+  top: 180px;
+}
+
+.visual-ex-2 {
+  position: relative;
+  display: block;
+  color: #292a2b;
+  font-size: 18px;
+  left: 100px;
+  top: 180px;
+}
+
+.visual-ex-3 {
+  position: relative;
+  display: block;
+  color: #362919;
+  font-size: 18px;
+  left: 100px;
+  top: 180px;
+}
+
+.visual-se {
+  position: absolute;
+  display: block;
+  width: 140px;
+  height: 48px;
+  padding: 15px;
+  top: 60%;
+  left: 100px;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #fff;
+  overflow: hidden;
+}
+
+.visual-se-2 {
+  position: absolute;
+  display: block;
+  width: 140px;
+  height: 48px;
+  padding: 15px;
+  top: 60%;
+  left: 100px;
+  text-align: center;
+  color: #292a2b;
+  border: 1px solid #292a2b;
+  overflow: hidden;
+}
+
+.visual-se-3 {
+  position: absolute;
+  display: block;
+  width: 140px;
+  height: 48px;
+  padding: 15px;
+  top: 60%;
+  left: 100px;
+  text-align: center;
+  color: #362919;
+  border: 1px solid #362919;
+  overflow: hidden;
+}
+
+.sw-visual-prev {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  z-index: 99;
+}
+
+.sw-visual-prev::after {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: -8px;
+  border-top: 2.8px solid #fff;
+  border-left: 2.8px solid #fff;
+  transform-origin: center;
+  transform: rotate(-45deg);
+  left: 14px;
+}
+
+.sw-visual-next {
+  position: absolute;
+  top: 50%;
+  right: 60px;
+  z-index: 99;
+}
+
+.sw-visual-next::after {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: -8px;
+  border-top: 2.8px solid #fff;
+  border-left: 2.8px solid #fff;
+  transform-origin: center;
+  transform: rotate(135deg);
+  left: 9px;
+}
+
+/* 코스 */
+
+.course {
+  display: block;
+  padding-bottom: 0px;
+}
+
+.course .inner {
+}
+
+.course-list {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.course_1 {
+  position: absolute;
+  display: block;
+  left: 270px;
+  bottom: 45px;
+}
+
+.course_2 {
+  position: relative;
+  display: block;
+  left: 270px;
+  bottom: 115px;
+}
+
+.course_3 {
+  position: relative;
+  display: block;
+  left: 270px;
+  bottom: 115px;
+}
+
+.menu-list {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+  margin-top: 90px;
+  margin-bottom: 70px;
+}
+
+.menu-list li {
+  position: relative;
+  display: block;
+  height: 100%;
+}
+
+.menu-list li a {
+  position: relative;
+  display: block;
+  width: 384px;
+  height: 100%;
+  text-align: center;
+  border-radius: 12px;
+  line-height: 80px;
+  color: #333;
+  font-size: 16px;
+  background: #f5f7fb;
+  box-shadow: 0px 0px 8px rgb(93 99 113 / 54%);
+  font-weight: 500;
+}
+
+.menu-list li a:hover {
+  background: #ff8800;
+  color: #fff;
+}
+
+.couser-title-wrap {
+  position: relative;
+  display: block;
+}
+
+.course-co {
+  position: relative;
+  display: block;
+  color: #ff6000;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 12px;
+}
+
+.course-title {
+  position: relative;
+  display: block;
+  color: #333;
+  font-size: 32px;
+  font-weight: 900;
+  float: left;
+  padding-right: 25px;
+}
+
+.course-ex {
+  position: relative;
+  display: block;
+  color: #333;
+  font-size: 16px;
+  float: left;
+  padding-bottom: 45px;
+}
+
+/* course-tab */
+
+.course-tab {
+  position: relative;
+  display: block;
+}
+
+.course-tab li {
+  position: relative;
+  display: block;
+  float: left;
+  padding: 0 15px;
+  padding-bottom: 15px;
+  margin-left: 15px;
+}
+
+.course-tab li a {
+  position: relative;
+  display: block;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.course-tab .on {
+  border-bottom: 3px solid #ff8800;
+}
+
+.course-tab .on a {
+  color: #ff8800;
+}
+
+/* .course-txt {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 48px;
+  font-size: 16px;
+  color: #333;
+  
+  text-align: center;
+  padding-top: 15px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.course-txt::after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 32px;
+  background-color: #ff8800;
+  margin: 10px 0;
+} */
+
+.tab {
+  position: relative;
+  display: block;
+  width: 264px;
+  height: 30px;
+  padding-top: 75px;
+  margin: 0 auto;
+}
+
+.tab li {
+  float: left;
+  text-align: center;
+}
+
+.tab a {
+  width: 57px;
+  height: 23px;
+  font-size: 16px;
+  padding: 3px 12px;
+  border-radius: 19px;
+  color: #333;
+  font-weight: 500;
+}
+
+.course .on img {
+  border-radius: 9px;
+  box-shadow: 2px 2px 4px rgb(0 0 0 /16%);
+}
+
+.course-content {
+  position: relative;
+  display: block;
+  font-size: 16px;
+  color: #333;
+  padding-top: 35px;
+}
+
+.course .course-content > li {
+  position: relative;
+  display: block;
+  float: left;
+  width: calc(25% - 10px);
+  height: 355px;
+  margin-bottom: 35px;
+}
+
+.course .course-content > li > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.course .course-content > li > a > div {
+  position: relative;
+  display: block;
+  width: 245px;
+  height: 228px;
+  overflow: hidden;
+}
+
+.course .only_pc {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 245px;
+  height: 228px;
+}
+
+.course .text-area {
+  position: relative;
+  display: block;
+  width: 245px;
+  height: 128px !important;
+  text-align: left;
+  padding: 14px 10px 0 18px;
+  white-space: nowrap;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 0px 4px rgb(0 0 0 /16%);
+  margin-top: -5px;
+  padding: 14px 10px 0px 8px;
+}
+
+.course .text-area em {
+  display: block;
+  width: 207px;
+  height: 44px;
+  font-size: 16px;
+  color: #333;
+  margin: 0px 0px 8px;
+  font-weight: 500;
+}
+
+.course .text-area span {
+  width: 207px;
+  height: 38px;
+  color: #999;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* 마우스 오버시 출력될 내용  */
+.course .course-content > li:hover .tab-box {
+  opacity: 1;
+}
+
+.tab-box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 228px;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  color: #fff;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.tab-box > strong {
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+}
+.tab-box > p {
+  position: relative;
+  display: block;
+  font-size: 14px;
+  word-break: keep-all;
+  margin-bottom: 14px;
+}
+.tab-box > span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 25px;
+  display: inline-block;
+  width: 144px;
+  height: 36px;
+  line-height: 36px;
+  font-size: 15px;
+  border: 1px solid #fff;
+  border-radius: 18px;
+}
+/* 컨설팅 */
+
+.consulting {
+  position: relative;
+  display: block;
+  padding-bottom: 135px;
+}
+
+.consulting .inner {
+  position: relative;
+  display: block;
+  height: 200px;
+  padding: 50px 100px;
+  box-sizing: border-box;
+  background-color: #7494ff;
+}
+
+.consulting h2 {
+  position: relative;
+  display: block;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  padding-bottom: 20px;
+}
+
+.consul-bt {
+  display: inline-block;
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.consul-bt > a {
+  color: #7494ff;
+  font-weight: 500;
+}
+
+.consul_img {
+  position: relative;
+  display: block;
+  left: 75%;
+  bottom: 200px;
+}
+
+/* 포트폴리오 */
+
+.portfolio {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 180px;
+}
+
+.portfolio .inner {
+}
+
+.port-po {
+  position: relative;
+  display: block;
+  text-transform: capitalize;
+  color: #ff6600;
+  font-weight: 800;
+  padding-bottom: 20px;
+}
+
+.port-title {
+  text-align: left;
+  font-weight: 700;
+  padding-right: 20px;
+  float: left;
+  font-size: 32px;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.port-ex {
+  display: inline-block;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+  padding-bottom: 50px;
+}
+
+.port-menu {
+  position: relative;
+  display: block;
+  padding-bottom: 60px;
+}
+
+/* port-tab */
+.port-tab {
+  position: relative;
+  display: block;
+}
+
+.port-tab li {
+  position: relative;
+  display: block;
+  float: left;
+  padding: 0 15px;
+  padding-bottom: 15px;
+  margin-left: 15px;
+}
+
+.port-tab li a {
+  position: relative;
+  display: block;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.port-tab .on {
+  border-bottom: 3px solid #ff8800;
+}
+
+.port-tab .on a {
+  color: #ff8800;
+}
+/* 
+.port .on img {
+  border-radius: 9px;
+  box-shadow: 2px 2px 4px rgb(0 0 0 /16%);
+} */
+
+.port-content {
+  position: relative;
+  display: block;
+  font-size: 16px;
+  color: #333;
+  padding-top: 35px;
+}
+
+.port-content > li {
+  position: relative;
+  display: block;
+  float: left;
+  width: calc(25% - 10px);
+  height: 202px;
+  margin-bottom: 35px;
+  margin-left: 13px;
+}
+
+.port-content > li:nth-child(4n + 1) {
+  margin-left: 0;
+}
+
+.port-content > li > a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.port-content > li > a > img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.port-content > li > a > div {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.port-content > li > a > div:hover {
+  opacity: 1;
+}
+
+.port-content > li > a > div > p {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  font-weight: 300;
+  font-size: 16px;
+  color: #ffffff;
+}
+.port-content > li > a > div > p > em {
+  position: relative;
+  display: block;
+  font-weight: 600;
+  color: #ff6000;
+  margin-bottom: 12px;
+}
+
+/* .port-tab {
+  position: relative;
+  display: block;
+  text-align: center;
+}
+
+.port-tab .port-tab-on > a {
+  color: #ff8800;
+}
+
+.port-tab li {
+  position: relative;
+  display: inline-block;
+  float: left;
+}
+
+
+.port-tab > li > a {
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+  padding: 4px 14px 3px;
+  text-transform: uppercase;
+  transition: all 0.4s;
+}
+
+.port-tab-on > a {
+  border-bottom: 3px solid #ff8000;
+} */
+
+/* .port-contents-wrap {
+  position: relative;
+  height: 420px;
+  box-sizing: border-box;
+}
+
+.port-contents-wrap > ul {
+  height: 100%;
+}
+
+.port-contents-wrap > ul > li {
+  float: left;
+  position: relative;
+  width: calc(33% - 5px);
+  height: calc(50% - 8px);
+  margin-right: 10px;
+  box-sizing: border-box;
+} */
+
+/* 잡 */
+
+.job {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 670px;
+}
+
+.job .inner {
+}
+
+.job-ju {
+  position: relative;
+  display: block;
+  font-size: 16px;
+  color: #ff6600;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+}
+
+.job h2 {
+  position: relative;
+  display: inline-block;
+  font-size: 32px;
+  color: #333;
+  font-weight: 700;
+  text-align: left;
+  padding-right: 10px;
+}
+
+.job-ex {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  padding-bottom: 50px;
+}
+
+.job > ul {
+  overflow: hidden;
+  width: 100%;
+  height: 395px;
+}
+
+.job-list {
+  float: left;
+  width: calc(50% - 7.5px);
+  height: 190px;
+  background-color: #eff4ff;
+  border-radius: 12px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.job-list-2 {
+  float: left;
+  width: calc(50% - 7.5px);
+  height: 190px;
+  background-color: #eff4ff;
+  border-radius: 12px;
+}
+
+.job-list-3 {
+  float: left;
+  width: calc(50% - 7.5px);
+  height: 190px;
+  background-color: #eff4ff;
+  border-radius: 12px;
+  margin-right: 10px;
+}
+
+.job-list-4 {
+  float: left;
+  width: calc(50% - 7.5px);
+  height: 190px;
+  background-color: #eff4ff;
+  border-radius: 12px;
+}
+
+.job > ul > li:nth-child(2n - 1) {
+  margin-left: 0;
+}
+
+.job-a {
+  position: relative;
+  display: block;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 20px 50px;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+.job-b {
+  position: relative;
+  display: block;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 20px 50px;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+.job-c {
+  position: relative;
+  display: block;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 20px 50px;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+.job-d {
+  position: relative;
+  display: block;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 20px 50px;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+.job-list:hover {
+  background-color: #ef9341;
+}
+
+.job-list-2:hover {
+  background-color: #ef9341;
+}
+
+.job-list-3:hover {
+  background-color: #ef9341;
+}
+
+.job-list-4:hover {
+  background-color: #ef9341;
+}
+
+.job-list:hover .job-a {
+  color: #fff;
+}
+
+.job-list:hover .job_1 {
+  color: #fff;
+}
+
+.job-list-2:hover .job-b {
+  color: #fff;
+}
+
+.job-list-2:hover .job_2 {
+  color: #fff;
+}
+
+.job-list-3:hover .job-c {
+  color: #fff;
+}
+
+.job-list-3:hover .job_3 {
+  color: #fff;
+}
+
+.job-list-4:hover .job-d {
+  color: #fff;
+}
+
+.job-list-4:hover .job_4 {
+  color: #fff;
+}
+
+.job > ul > li > a > img {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+}
+
+.job_1 {
+  position: relative;
+  display: inline-block;
+  bottom: 85px;
+  left: 170px;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+.job_2 {
+  position: relative;
+  display: inline-block;
+  bottom: 85px;
+  left: 170px;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+.job_3 {
+  position: relative;
+  display: inline-block;
+  bottom: 85px;
+  left: 170px;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+.job_4 {
+  position: relative;
+  display: inline-block;
+  bottom: 85px;
+  left: 170px;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* 블로그 */
+
+.blog {
+  margin-bottom: 140px;
+}
+
+.blog .inner {
+  position: relative;
+  display: block;
+  height: 200px;
+  padding: 50px 100px;
+  box-sizing: border-box;
+  background-color: #ef9341;
+}
+
+.blog h2 {
+  position: relative;
+  display: block;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 30px;
+}
+
+.blog_1 {
+  display: inline-block;
+  background-color: #fff;
+  padding: 6px 10px;
+  border-radius: 15px;
+}
+
+.blog-se {
+  color: #ef9341;
+  font-weight: 500;
+}
+
+.blog-img {
+  position: relative;
+  display: block;
+  bottom: 210px;
+  left: 80%;
+}
+
+/* 하단 */
+
+.footer {
+  position: relative;
+  display: block;
+  padding: 20px 0px 40px;
+  font-size: 16px;
+  color: #000;
+  border-top: 1px solid #ebebeb;
+}
+
+/* .footer .container{
+    display: block;
+width:1000px;
+height: 302px;
+margin: 0px 174.5px;
+} */
+
+.fnb {
+  position: relative;
+  display: block;
+  height: 24px;
+  margin-bottom: 35px;
+}
+
+.fnb a {
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.fnb a:first-child {
+  width: 59.92px;
+  height: 30px;
+  margin-right: 10px;
+  padding: 5px 10px 5px 0px;
+}
+
+.fnb a:nth-child(2) {
+  width: 98.41px;
+  height: 30px;
+  margin: 0px 10px;
+  padding: 5px 10px;
+}
+
+.fnb a:nth-child(3) {
+  width: 69.92px;
+  height: 30px;
+  margin: 0px 10px;
+  padding: 5px 10px;
+}
+
+.fnb a:nth-child(4) {
+  width: 69.92px;
+  height: 30px;
+  margin: 0px 10px;
+  padding: 5px 10px;
+  color: #ff8800;
+}
+
+.fnb a:last-child {
+  width: 142.89px;
+  height: 30px;
+  margin: 0px 10px;
+  padding: 5px 10px;
+}
+
+.address-wrap {
+  position: relative;
+  display: block;
+}
+
+.address-left {
+  position: relative;
+  display: block;
+  float: left;
+}
+
+.address {
+  position: relative;
+  display: inline;
+  width: 695px;
+  font-size: 13px;
+  color: #999;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.address li {
+  line-height: 20px;
+}
+
+.address-bottom {
+  position: relative;
+  display: block;
+  width: 290px;
+  font-size: 13px;
+  color: #999;
+  font-weight: 500;
+}
+
+.address-bottom li {
+  line-height: 20px;
+}
+
+.copy {
+  position: relative;
+  display: block;
+  margin-top: 30px;
+  color: #333;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.address-right {
+  position: relative;
+  display: block;
+  float: right;
+  width: 290px;
+}
+
+.bank-right {
+  position: relative;
+  display: block;
+  font-size: 14px;
+  width: 282px;
+}
+
+.bank-right strong {
+  display: block;
+  width: 49px;
+  height: 20px;
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.bank-right p {
+  display: block;
+  width: 282px;
+  height: 40px;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.bank-right a {
+  position: relative;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.sns-list {
+  position: relative;
+  display: block;
+  margin-top: 15px;
+}
+
+.sns-list a {
+  position: relative;
+  display: block;
+  width: 36px;
+  height: 24px;
+  float: left;
+}
+
+.sns-list a img {
+  position: relative;
+  display: block;
+}
+
+/* 하단 클릭 */
+.gitple-wrap {
+  position: fixed;
+  right: 15px;
+  bottom: 110px;
+  width: 14%;
+  height: 9%;
+  background: rgba(47, 47, 47);
+  color: #fff;
+  z-index: 9999;
+  border-radius: 5px;
+}
+.gitple-main {
+}
+.gitple-ex-1 {
+  padding: 15px;
+  font-size: 13px;
+}
+.gitple-ex-2 {
+  padding: 0px 15px;
+  font-size: 13px;
+}
+
+.gitple-close {
+  position: absolute;
+  border: 0;
+  bottom: 61px;
+  right: 10px;
+
+  z-index: 99999;
+
+  cursor: pointer;
+  background: transparent;
+  color: #999;
+  transition: transform 0.3s;
+}
+.gitple-close:hover {
+  transform: rotate(90deg);
+}
+.gitple-img {
+  position: fixed;
+  bottom: 30px;
+  display: block;
+  right: 24px;
+
+  width: 60px;
+  height: 60px;
+}
